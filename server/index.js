@@ -14,6 +14,11 @@ app.put('/api/books', bc.update);           // put endpoint
 app.delete('/api/books', bc.delete);        // delete endpoint 
 
 
+app.use(express.static(__dirname + "/../build")); // express.static() serves the URL 
+                                                  // this line must precede the app.listen() call
+                                                  // open up http://localhost:3000 in your browser
+                                                  // in CL  node server/ 
+
 const port = 3000;
 app.listen(port, () => console.log('Listen to port:', port));  // listen method invocation
                                // (`Listen to port: ${port}')
